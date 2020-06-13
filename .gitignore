@@ -4,3 +4,4 @@
 .idea
 
 /api/.vercel
+/api/node_modules

@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "alias": ["petgram-api-williamsantc"],
   "builds": [{ "src": "index.js", "use": "@vercel/node" }],
   "routes": [{
     "headers": {
