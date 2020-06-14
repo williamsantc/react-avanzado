@@ -3,7 +3,7 @@ import { Category } from '../Category'
 import { Item, List } from './styles'
 import { useFetch } from '../../hooks/useFetch'
 
-export const ListOfCategories = () => {
+const ListOfCategoriesComponent = () => {
   const [showfixed, setShowFixed] = useState(false)
   const [categories, loading] = useFetch('/categories')
 
@@ -41,3 +41,5 @@ export const ListOfCategories = () => {
     </>
   )
 }
+
+export const ListOfCategories = React.memo(ListOfCategoriesComponent)

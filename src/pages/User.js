@@ -1,15 +1,15 @@
 import React, { useContext } from 'react'
 import { StateContext } from '../Context'
 import { SubmitButton } from '../components/SubmitButton'
-import { Container } from '../styles/GlobalStyles'
+import { Layout } from '../components/Layout'
 
-export const UserPage = () => {
+export default () => {
   const { removeAuth } = useContext(StateContext)
   return (
-    <Container>
+    <Layout title='Usuario' subtitle='Datos del usuario'>
       <h1>User</h1>
       <p>¡Bienvenido!</p>
       <SubmitButton onClick={removeAuth}>Cerrar sesión</SubmitButton>
-    </Container>
+    </Layout>
   )
 }

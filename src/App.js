@@ -1,12 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, Suspense } from 'react'
 import { Router, Redirect } from '@reach/router'
 
-// Pages
-import { HomePage } from './pages/Home'
-import { DetailPage } from './pages/Detail'
-import { FavsPage } from './pages/Favs'
-import { UserPage } from './pages/User'
-import { NotRegisteredUserPage } from './pages/NotRegisteredUser'
+// Ready to use Pages
 import { NotFoundPage } from './pages/NotFound'
 
 // Styles
@@ -16,10 +11,17 @@ import { Logo } from './components/logo'
 import { NavBar } from './components/NavBar'
 import { StateContext } from './Context'
 
+// Lazy loaded pages
+const FavsPage = React.lazy(() => import('./pages/Favs'))
+const HomePage = React.lazy(() => import('./pages/Home'))
+const DetailPage = React.lazy(() => import('./pages/Detail'))
+const UserPage = React.lazy(() => import('./pages/User'))
+const NotRegisteredUserPage = React.lazy(() => import('./pages/NotRegisteredUser'))
+
 export const App = () => {
   const { isAuth } = useContext(StateContext)
   return (
-    <>
+    <Suspense fallback={<div />}>
       <GlobalStyle />
       <Logo />
       <Router>
@@ -35,6 +37,6 @@ export const App = () => {
         <UserPage path='/user' />
       </Router>
       <NavBar />
-    </>
+    </Suspense>
   )
 }

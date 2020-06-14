@@ -3,9 +3,9 @@ import { UserForm } from '../components/UserForm'
 import { StateContext } from '../Context'
 import { RegisterMutation } from '../container/RegisterMutation'
 import { LoginMutation } from '../container/LoginMutation'
-import { Container } from '../styles/GlobalStyles'
+import { Layout } from '../components/Layout'
 
-export const NotRegisteredUserPage = () => {
+export default () => {
   const { activateAuth } = useContext(StateContext)
   const FormSubmission = (errMsg, title, action) => (doMutation, { loading, error }) => {
     const onSubmit = ({ email, password }) => {
@@ -27,7 +27,10 @@ export const NotRegisteredUserPage = () => {
     )
   }
   return (
-    <Container>
+    <Layout
+      title='Regitrate o Ingresa'
+      subtitle='Para poder visualizar la aplicación es necesario que te registres o inicies sesión'
+    >
       <RegisterMutation>{
         FormSubmission('El usuario ya existe o hay algún problema.', 'Registrarse', ({ data: { signup } }) => {
           activateAuth(signup)
@@ -41,6 +44,6 @@ export const NotRegisteredUserPage = () => {
           })
         }
       </LoginMutation>
-    </Container>
+    </Layout>
   )
 }
