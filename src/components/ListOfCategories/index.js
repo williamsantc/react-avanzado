@@ -5,7 +5,7 @@ import { useFetch } from '../../hooks/useFetch'
 
 export const ListOfCategories = () => {
   const [showfixed, setShowFixed] = useState(false)
-  const [categories, loading] = useFetch()
+  const [categories, loading] = useFetch('/categories')
 
   useEffect(() => {
     const onScroll = (evt) => {
@@ -27,7 +27,7 @@ export const ListOfCategories = () => {
       ) : (
         categories.map((category) => (
           <Item key={category.id}>
-            <Category {...category} />
+            <Category {...category} path={`/pet/${category.id}`} />
           </Item>
         ))
       )}

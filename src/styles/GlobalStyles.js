@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 html {
@@ -39,4 +39,9 @@ html {
                 min-height: 100vh;
                 padding-bottom: 10px;
         }
+`
+
+export const Container = styled.div`
+margin-left: 13px;
+margin-right: 13px;
 `
