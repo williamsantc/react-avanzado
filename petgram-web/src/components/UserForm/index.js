@@ -1,11 +1,11 @@
 import React from 'react'
-import { useInputValue } from '../../hooks/useInputValue'
+import { _useInputValue } from '../../hooks/useInputValue'
 import { Form, Input, Title, Error } from './Styles'
 import { SubmitButton } from '../SubmitButton'
 
 export const UserForm = ({ error, onSubmit, title, disabled }) => {
-  const email = useInputValue('')
-  const password = useInputValue('')
+  const email = _useInputValue('')
+  const password = _useInputValue('')
 
   const handleSubmit = (e) => {
     e.preventDefault()

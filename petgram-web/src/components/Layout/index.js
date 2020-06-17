@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Div, Title, Subtitle } from './styles'
+import { Div, Title, Subtitle } from './Styles'
 
 export const Layout = ({ children, title, subtitle, tagsVisible }) => {
   return (

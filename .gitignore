@@ -1,7 +1,1 @@
-/node_modules
-/dist
-.vercel
 .idea
-
-/api/.vercel
-/api/node_modules
